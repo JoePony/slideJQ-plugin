@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/bootstrap-v3.3.5.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>One plugin, more slides</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h2>slideJQ: A slide/switch plugin that can be used variously</h2>
+        </header>
+        <ul class="demo-list">
+            <li class="clearfix">
+                <div class="demo-wrap">
+                <div class="demo tab-wrap slide-wrap shadow-b">
+                    <div class="slide-list-wrap overflow-h pos-r shadow-b" id="slideWrap1">
+                        <ul class="slide-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。"><img src="images/1.jpg" alt="非洲安波塞利国家公园，象群列队前行。"></a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"><img src="images/2.jpg" alt="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"></a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"><img src="images/3.jpg" alt="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"></a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"><img src="images/4.jpg" alt="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"></a></li>
+                        </ul>
+                        <ul class="index-list">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul class="slide-title-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。" class="ellipsis">非洲安波塞利国家公园，象群列队前行。</a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。" class="ellipsis">江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。</a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。" class="ellipsis">塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。</a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。" class="ellipsis">比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。</a></li>
+                        </ul>
+                        <span class="arrow arrow-icon arrow-icon-left prev"></span>
+                        <span class="arrow arrow-icon arrow-icon-right next"></span>
+                    </div>
+                </div>  
+                </div>
+                <code>              
+                <pre>
+/* 轮播 */
+$('slideWrap1').slideJQ({        //用容器元素调用slideJQ组件，必选项
+    slideList: '.slide-list',        //幻灯列表元素，必选项
+    navList: {
+        ele: '.index-list',       //索引按钮列表元素，可选项
+        activeClass: 'active'     //高亮样式，可选项
+    },
+    titleList: '.slide-title-list',    //标题列表元素，可选项
+    arrowPrev: '.prev',       //前一张按钮，可选项
+    arrowNext: '.next',       //下一张按钮，可选项
+    speed: 280,               //播放速度，可选项，默认为300毫秒
+    animate: {
+        type: 'slide'  //类型可选slide/fade/blur/scale/rotate/default，可选项，默认slide(支持移动端touch)
+        //className:''     //fade、blur、scale、rotate配合实现效果的相应css3样式名
+    },
+    aniamtionType: 'swing',    //动画类型，仅slide支持，可选项，默认swing
+    autoPlay: true,       //是否自动播放，可选项，默认自动播放
+    duration: 1500,       //持续时间，可选项，默认2500毫秒
+    initialIndex: 2,      //指定最初高亮索引，可选项，默认为1
+    mouseType: 'click mouseover',    //索引button上的鼠标触发事件，可选项，默认为click mouseover
+    titleHidden:false,   // 标题是否隐藏，可选项，默认为false
+    navHidden:false,      // 索引按钮是否隐藏，可选项，默认为false
+    remainNav:false //默认根据图片数量自动生成索引按钮，并删除原有静态索引元素。要保持原有元素则选true
+});
+                </pre>
+                </code> 
+            </li>
+            <li class="clearfix">
+                <div class="demo-wrap">
+                <div class="demo tab-wrap slide-wrap shadow-b">
+                    <div class="slide-list-wrap overflow-h pos-r shadow-b" id="slideWrap2">
+                        <ul class="slide-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。"><img src="images/1.jpg" alt="非洲安波塞利国家公园，象群列队前行。"></a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"><img src="images/2.jpg" alt="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"></a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"><img src="images/3.jpg" alt="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"></a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"><img src="images/4.jpg" alt="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"></a></li>
+                        </ul>
+                        <ul class="index-list">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul class="slide-title-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。" class="ellipsis">非洲安波塞利国家公园，象群列队前行。</a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。" class="ellipsis">江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。</a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。" class="ellipsis">塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。</a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。" class="ellipsis">比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。</a></li>
+                        </ul>
+                        <span class="arrow arrow-icon arrow-icon-left prev"></span>
+                        <span class="arrow arrow-icon arrow-icon-right next"></span>
+                    </div>
+                </div>  
+                </div>
+                <code>              
+                <pre>
+/* 模糊 */
+$('#slideWrap2').slideJQ({
+    slideList:'.slide-list',
+    navList:{
+        ele:'.index-list',
+        activeClass:'active'
+    },
+    titleList:'.slide-title-list',
+    arrowPrev:'.prev',
+    arrowNext:'.next',
+    animate:{
+        type:'blur',  //模糊效果
+        className:'animation-blur'  //需指定相应的css3样式
+    },
+    duration:1500,
+    navHidden:true  //隐藏索引按钮
+});
+                </pre>
+                </code> 
+            </li>
+            <li class="clearfix">
+                <div class="demo-wrap">
+                <div class="demo tab-wrap slide-wrap shadow-b">
+                    <div class="slide-list-wrap overflow-h pos-r shadow-b" id="slideWrap3">
+                        <ul class="slide-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。"><img src="images/1.jpg" alt="非洲安波塞利国家公园，象群列队前行。"></a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"><img src="images/2.jpg" alt="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"></a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"><img src="images/3.jpg" alt="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"></a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"><img src="images/4.jpg" alt="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"></a></li>
+                        </ul>
+                        <ul class="index-list">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul class="slide-title-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。" class="ellipsis">非洲安波塞利国家公园，象群列队前行。</a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。" class="ellipsis">江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。</a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。" class="ellipsis">塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。</a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。" class="ellipsis">比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。</a></li>
+                        </ul>
+                        <span class="arrow arrow-icon arrow-icon-left prev"></span>
+                        <span class="arrow arrow-icon arrow-icon-right next"></span>
+                    </div>
+                </div>  
+                </div>
+                <code>              
+                <pre>
+/* fade */                
+$('#slideWrap3').slideJQ({
+    slideList:'.slide-list',
+    navList:{
+        ele:'.index-list',
+        activeClass:'active'
+    },
+    titleList:'.slide-title-list',
+    arrowPrev:'.prev',
+    arrowNext:'.next',
+    animate:{
+        type:'fade',  //fade效果
+        className:'animation-fade'  //需指定相应的css3样式
+    },
+    duration:1500,
+    navHidden:true  //隐藏索引按钮
+});
+                </pre>
+                </code> 
+            </li>
+                        <li class="clearfix">
+                <div class="demo-wrap">
+                <div class="demo tab-wrap slide-wrap shadow-b">
+                    <div class="slide-list-wrap overflow-h pos-r shadow-b" id="slideWrap4">
+                        <ul class="slide-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。"><img src="images/1.jpg" alt="非洲安波塞利国家公园，象群列队前行。"></a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"><img src="images/2.jpg" alt="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"></a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"><img src="images/3.jpg" alt="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"></a></li>
+                        </ul>
+                        <ul class="index-list">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul class="slide-title-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。" class="ellipsis">非洲安波塞利国家公园，象群列队前行。</a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。" class="ellipsis">江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。</a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。" class="ellipsis">塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。</a></li>
+                        </ul>
+                        <span class="arrow arrow-icon arrow-icon-left prev"></span>
+                        <span class="arrow arrow-icon arrow-icon-right next"></span>
+                    </div>
+                </div>  
+                </div>
+                <code>              
+                <pre>
+/* 缩放 */                
+$('#slideWrap4').slideJQ({
+    slideList:'.slide-list',
+    navList:{
+        ele:'.index-list',
+        activeClass:'active'
+    },
+    titleList:'.slide-title-list',
+    arrowPrev:'.prev',
+    arrowNext:'.next',
+    animate:{
+        type:'scale',  //缩放效果
+        className:'animation-scale'  //需指定相应的css3样式
+    },
+    duration:1500,
+    titleHidden:true,  //隐藏标题
+    navHidden:true  //隐藏标题
+});
+                </pre>
+                </code> 
+            </li>
+            <li class="clearfix">
+                <div class="demo-wrap">
+                <div class="demo tab-wrap slide-wrap shadow-b">
+                    <div class="slide-list-wrap overflow-h pos-r shadow-b" id="slideWrap5">
+                        <ul class="slide-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。"><img src="images/1.jpg" alt="非洲安波塞利国家公园，象群列队前行。"></a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"><img src="images/2.jpg" alt="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"></a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"><img src="images/3.jpg" alt="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"></a></li>
+                        </ul>
+                        <ul class="index-list">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul class="slide-title-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。" class="ellipsis">非洲安波塞利国家公园，象群列队前行。</a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。" class="ellipsis">江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。</a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。" class="ellipsis">塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。</a></li>
+                        </ul>
+                        <span class="arrow arrow-icon arrow-icon-left prev"></span>
+                        <span class="arrow arrow-icon arrow-icon-right next"></span>
+                    </div>
+                </div>  
+                </div>
+                <code>              
+                <pre>
+/* 翻转 */                
+$('#slideWrap5').slideJQ({
+    slideList:'.slide-list',
+    navList:{
+        ele:'.index-list',
+        activeClass:'active'
+    },
+    titleList:'.slide-title-list',
+    arrowPrev:'.prev',
+    arrowNext:'.next',
+    animate:{
+        type:'rotate',  //翻转效果
+        className:'animation-rotate'  //需指定相应的css3样式
+    },
+    duration:1500,
+    titleHidden:true  //隐藏标题
+});
+                </pre>
+                </code> 
+            </li>
+                        <li class="carrousel">
+                <div class="demo-wrap">
+                <div class="demo tab-wrap slide-wrap">
+                    <div class="slide-list-wrap overflow-h pos-r" id="slideCarrousel1">
+                        <ul class="slide-list">
+                            <li><a href="" title="非洲安波塞利国家公园，象群列队前行。"><img src="images/1.jpg" alt="非洲安波塞利国家公园，象群列队前行。"></a></li>
+                            <li><a href="" title="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"><img src="images/2.jpg" alt="江西省婺源县大鄣山乡石城村，古树红枫与白墙黛瓦在晨雾中若隐若现，阳光穿透薄雾风景如画。"></a></li>
+                            <li><a href="" title="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"><img src="images/3.jpg" alt="塞尔维亚科温，俄罗斯与塞尔维亚举行联合军事演习，伞兵跳伞时恰好遇到彩虹，画面唯美。"></a></li>
+                            <li><a href="" title="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"><img src="images/4.jpg" alt="比利时哈雷市的一个树林遍地开满野生蓝铃花，形成一片名副其实的“蓝森林”。"></a></li>
+                        </ul>
+                        <span class="arrow arrow-icon arrow-icon-left prev"></span>
+                        <span class="arrow arrow-icon arrow-icon-right next"></span>
+                    </div>
+                </div>  
+                </div>
+                <code>              
+                <pre>
+/* 多图轮播 */
+$('#slideCarrousel1').slideJQ({   //ran slideJQ
+    slideList:'.slide-list',
+    arrowPrev:'.prev',
+    arrowNext:'.next',
+    animate:{
+        type:'carrousel'          //多图轮播效果
+    } 
+});
+                </pre>
+                </code> 
+            </li>
+            <li class="clearfix">
+                <div class="demo-wrap">
+                    <div class="demo tab-wrap" id="tabWrap1">
+                        <ul class="tab-list">
+                            <li>公司列表</li>
+                            <li>人员列表</li>
+                            <li>申请加入</li>
+                        </ul>
+                        <div class="pane-list">
+                            <div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>名称</th>
+                                            <th>地址</th>
+                                            <th>电话</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>**有限公司</td>
+                                            <td>高新一路***号</td>
+                                            <td>029-9898****</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>**科技有限公司</td>
+                                            <td>高新路***号</td>
+                                            <td>029-9898****</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>**股份有限公司</td>
+                                            <td>高新六路***号</td>
+                                            <td>1890998****</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>**网络有限公司</td>
+                                            <td>高新二路***号</td>
+                                            <td>029-2988****</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>**有机农业</td>
+                                            <td>高新路***号</td>
+                                            <td>029-9898****</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Age</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>成小明</td>
+                                            <td>男</td>
+                                            <td>28</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Jack</td>
+                                            <td>男</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>珍妮</td>
+                                            <td>女</td>
+                                            <td>25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Rose</td>
+                                            <td>女</td>
+                                            <td>31</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>老张</td>
+                                            <td>男</td>
+                                            <td>50</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <form action="" class="form-horizontal" id="form-apply">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="company" placeholder="公司名称" autocomplete="off" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="姓名" autocomplete="off" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="address" placeholder="地址" autocomplete="off" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-3 control-label" for="birthday">出生日期：</label>
+                                        <div class="control-group col-xs-9">
+                                            <!-- <input type="text" name="birthday" id="birthday" required class="easyui-datebox" autocomplete="off" /> -->
+                                            <input type="text" class="form-control" name="birthday" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <input type="submit" id="btnSubmit" class="btn btn-success col-xs-offset-3 col-xs-6" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <code>              
+                <pre>
+/* 无效果切换 */                
+$('#tabWrap1').slideJQ({
+    slideList:'.pane-list',
+    navList:{
+        ele:'.tab-list',
+        activeClass:'active'
+    },
+    animate:{
+        type:'default'  //不设置切换动画
+    },
+    autoPlay:false,   //关闭自动播放
+    mouseType: 'click',  //设置触发事件为点击
+    remainNav:true,  //默认根据图片数量自动生成索引按钮，并删除原有静态索引元素。要保持原有元素则选true
+    initialIndex:3
+});
+                </pre>
+                </code> 
+            </li>
+        </ul>
+    </div>
+    <div id="toTop" class="toTop arrow-icon arrow-icon-right next" title="回顶部"></div>
+    <script src="js/lib/require_v2.1.11.js" data-main="js/script/main"></script>
+    
+    <!--[if lt IE 9]>
+    <style>
+        .wrapper{display:none;}
+        .notic-for-ie{
+            display:block;
+            text-align:center;
+            margin-top:10%
+        }
+    </style>
+    <p class="notic-for-ie">温馨提醒：您当前的浏览器版本过低，存在安全风险，建议升级浏览器</p>
+    <![endif]-->
+</body>
+
+</html>
